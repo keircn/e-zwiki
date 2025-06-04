@@ -29,7 +29,7 @@ export default function HomePage() {
               <span className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-900 bg-clip-text text-transparent">E-Z</span> Wiki
             </h1>
             <p className="text-xl md:text-2xl text-fd-muted-foreground font-medium max-w-3xl mx-auto leading-relaxed">
-              The team at e-z has a burning passion for creating high-quality web services that are easy to use and understand. We strive to offer the best experience possible for our users.
+              The team at E-Z has a burning passion for creating high-quality web services that are easy to use and understand. We strive to offer the best experience possible for our users.
             </p>
           </div>
 
