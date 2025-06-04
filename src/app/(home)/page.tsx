@@ -17,7 +17,7 @@ export default function HomePage() {
         <div className="absolute bottom-1/6 right-1/6 w-40 h-40 bg-gradient-to-r from-pink-500/8 to-rose-500/8 rounded-full blur-lg animate-float"></div>
         <div className="absolute top-2/3 left-1/5 w-20 h-20 bg-gradient-to-r from-teal-500/10 to-cyan-500/10 rounded-full blur-sm animate-pulse-glow"></div>
 
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.03)_1px,transparent_1px)] bg-[size:80px_80px]"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,0.03)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
 
         <div className="absolute inset-0 opacity-[0.015] bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48ZmlsdGVyIGlkPSJub2lzZSI+PGZlVHVyYnVsZW5jZSB0eXBlPSJmcmFjdGFsTm9pc2UiIGJhc2VGcmVxdWVuY3k9IjAuOSIgbnVtT2N0YXZlcz0iNCIgcmVzdWx0PSJub2lzZSIvPjxmZUNvbG9yTWF0cml4IGluPSJub2lzZSIgdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWx0ZXI9InVybCgjbm9pc2UpIiBvcGFjaXR5PSIwLjQiLz48L3N2Zz4=')]"></div>
       </div>
@@ -49,11 +49,11 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <div className="border-t border-fd-border py-8 text-center">
+      {/* <div className="border-t border-fd-border py-8 text-center">
         <p className="text-fd-muted-foreground text-sm">
           Built with ❤️ by {<Link href="https://github.com/keircn">Keiran</Link>}
         </p>
-      </div>
+      </div> */}
     </main>
   );
 }
