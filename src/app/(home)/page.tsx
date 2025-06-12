@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { GithubInfo } from 'fumadocs-ui/components/github-info';
 
 export default function HomePage() {
   return (
@@ -32,6 +33,11 @@ export default function HomePage() {
               The team at E-Z has a burning passion for creating high-quality web services that are easy to use and understand. We strive to offer the best experience possible for our users.
             </p>
           </div>
+          <GithubInfo
+            owner="keircn"
+            repo="e-zdocs"
+            className="text-fd-muted-foreground text-sm md:text-base rounded-lg px-4 py-2 inline-flex items-center gap-2"
+          />
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
             <Link
