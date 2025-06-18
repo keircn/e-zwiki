@@ -1,0 +1,94 @@
+---
+title: File Upload API
+description: Learn how to upload files using the E-Z.host API
+---
+
+# File Upload API
+
+Upload files to E-Z.host with automatic Cloudflare CDN distribution.
+
+## Endpoint
+
+`POST /files`
+
+**Authentication Required**
+
+## Headers
+
+| Header | Value | Description |
+|--------|-------|-------------|
+| `key` | `YOUR_API_KEY` | Your API key for authentication |
+
+## Request Body
+
+Form data with the following field:
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `file` | File | The file to upload |
+
+## Example Request
+
+```bash
+curl -X POST 'https://api.e-z.host/files' \
+  -H 'key: YOUR_API_KEY' \
+  -F 'file=@/absolute/path/to/file.png'
+```
+
+## Response
+
+### Success Response
+
+```json
+{
+  "success": true,
+  "message": "File Uploaded",
+  "imageUrl": "https://hentai.expert/q6j5a001.png",
+  "rawUrl": "https://r2.e-z.host/ca19848c-de8c-4cae-9a10-858d6fd864b7/q6j5a001.png",
+  "deletionUrl": "https://api.e-z.host/files/delete?key=random-deletion-key"
+}
+```
+
+### Response Fields
+
+| Field | Description |
+|-------|-------------|
+| `success` | Boolean indicating if the request was successful |
+| `message` | Status message |
+| `imageUrl` | Public URL for viewing the uploaded file |
+| `rawUrl` | Direct CDN URL for the uploaded file |
+| `deletionUrl` | URL to delete the uploaded file |
+
+## Error Handling
+
+Common error responses:
+
+- **400 Bad Request**: Missing file or invalid file format
+- **401 Unauthorized**: Invalid or missing API key
+- **413 Payload Too Large**: File size exceeds the limit
+- **422 Unprocessable Entity**: File validation failed
+- **429 Too Many Requests**: Rate limit exceeded (3 requests per 15 seconds)
+
+### Error Response Format
+
+```json
+{
+  "success": false,
+  "error": "Error description"
+}
+```
+
+## Rate Limiting
+
+This endpoint is subject to the global rate limit of **3 requests per 15 seconds per API key**.
+
+## File Types
+
+E-Z.host supports various file types. Ensure your file is a valid format and meets the size requirements.
+
+## Need Help?
+
+If you need assistance with the file upload API:
+
+- Ask our [Discord](https://discord.gg/ez) community and staff
+- Email us at [support@e-z.gg](mailto:support@e-z.gg)

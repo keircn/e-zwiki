@@ -1,0 +1,102 @@
+---
+title: URL Shortener API
+description: Learn how to shorten URLs using the E-Z.host API
+---
+
+# URL Shortener API
+
+Create short, shareable links from long URLs using the E-Z.host URL shortener.
+
+## Endpoint
+
+`POST /shortener`
+
+**Authentication Required**
+
+## Headers
+
+| Header | Value | Description |
+|--------|-------|-------------|
+| `Content-Type` | `application/json` | The type of the request body |
+| `key` | `YOUR_API_KEY` | Your API key for authentication |
+
+## Request Body
+
+JSON object with the following field:
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `url` | string | The URL to shorten |
+
+### Example Request Body
+
+```json
+{
+  "url": "https://example.com"
+}
+```
+
+## Example Request
+
+```bash
+curl -X POST https://api.e-z.host/shortener \
+  -H "Content-Type: application/json" \
+  -H "key: YOUR_API_KEY" \
+  -d '{"url": "https://example.com"}'
+```
+
+## Response
+
+### Success Response
+
+```json
+{
+  "success": true,
+  "message": "URL shortened",
+  "shortendUrl": "https://hentai.expert/s/4mijx5",
+  "deletionUrl": "https://api.e-z.host/shortener/delete?key=random-deletion-key"
+}
+```
+
+### Response Fields
+
+| Field | Description |
+|-------|-------------|
+| `success` | Boolean indicating if the request was successful |
+| `message` | Status message |
+| `shortendUrl` | The shortened URL |
+| `deletionUrl` | URL to delete the shortened link |
+
+## Error Handling
+
+Common error responses:
+
+- **400 Bad Request**: Invalid URL format
+- **401 Unauthorized**: Invalid or missing API key
+- **422 Unprocessable Entity**: Validation error due to missing or invalid parameters
+- **429 Too Many Requests**: Rate limit exceeded (3 requests per 15 seconds)
+
+### Error Response Format
+
+```json
+{
+  "success": false,
+  "error": "Error description"
+}
+```
+
+## Rate Limiting
+
+This endpoint is subject to the global rate limit of **3 requests per 15 seconds per API key**.
+
+## URL Requirements
+
+- URLs must be valid and properly formatted
+- URLs should include the protocol (http:// or https://)
+
+## Need Help?
+
+If you need assistance with the URL shortener API:
+
+- Ask our [Discord](https://discord.gg/ez) community and staff
+- Email us at [support@e-z.gg](mailto:support@e-z.gg)

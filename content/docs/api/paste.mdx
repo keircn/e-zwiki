@@ -1,0 +1,115 @@
+---
+title: Paste API
+description: Create text pastes with syntax highlighting support using the E-Z.host paste service.
+---
+
+## Endpoint
+
+`POST /paste`
+
+## Headers
+
+| Header | Value | Description |
+|--------|-------|-------------|
+| `Content-Type` | `application/json` | The type of the request body |
+| `key` | `YOUR_API_KEY` | Your API key for authentication |
+
+## Request Body
+
+JSON object with the following fields:
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `text` | string | Yes | The content of the paste |
+| `title` | string | Yes | Title for the paste |
+| `description` | string | Yes | Description for the paste |
+| `language` | string | Yes | Programming language for syntax highlighting |
+
+### Example Request Body
+
+```json
+{
+  "text": "console.log('Hello, World!');",
+  "title": "My JavaScript Code",
+  "description": "A simple hello world app",
+  "language": "javascript"
+}
+```
+
+## Example Request
+
+```bash
+curl -X POST https://api.e-z.host/paste \
+  -H 'Content-Type: application/json' \
+  -H 'key: YOUR_API_KEY' \
+  -d '{
+    "text": "console.log(\"Hello, World!\");",
+    "title": "My JavaScript Code",
+    "description": "A simple hello world app",
+    "language": "javascript"
+  }'
+```
+
+## Response
+
+### Success Response
+
+```json
+{
+  "success": true,
+  "message": "Paste Created",
+  "pasteUrl": "https://hentai.expert/p/i7msws0v",
+  "rawUrl": "https://hentai.expert/p/raw/i7msws0v",
+  "deletionUrl": "https://api.e-z.host/paste/delete?key=random-deletion-key"
+}
+```
+
+### Response Fields
+
+| Field | Description |
+|-------|-------------|
+| `success` | Boolean indicating if the request was successful |
+| `message` | Status message |
+| `pasteUrl` | URL to view the paste with syntax highlighting |
+| `rawUrl` | URL to view the raw paste content |
+| `deletionUrl` | URL to delete the paste |
+
+## Error Handling
+
+Common error responses:
+
+- **400 Bad Request**: Invalid input format
+- **401 Unauthorized**: Invalid or missing API key
+- **422 Unprocessable Entity**: Validation error due to missing or invalid parameters
+- **429 Too Many Requests**: Rate limit exceeded (3 requests per 15 seconds)
+
+### Error Response Format
+
+```json
+{
+  "success": false,
+  "error": "Error description"
+}
+```
+
+## Rate Limiting
+
+This endpoint is subject to the global rate limit of **3 requests per 15 seconds per API key**.
+
+## Supported Languages
+
+E-Z.host supports syntax highlighting for many programming languages including:
+- JavaScript
+- Python
+- Java
+- C++
+- HTML
+- CSS
+- And many more...
+
+## Need Help?
+
+If you need assistance with the paste API:
+
+- Ask our [Discord](https://discord.gg/ez) community and staff
+- Email us at [support@e-z.gg](mailto:support@e-z.gg)
