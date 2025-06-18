@@ -1,4 +1,78 @@
 ---
 title: API Reference
-description: Learn how to interact with E-Z.host using our API.
+description: Learn how to interact with E-Z.host using our API to maximize your productivity.
 ---
+
+# API Documentation
+
+Welcome to the E-Z.host API documentation. Our API allows you to programmatically upload files, shorten URLs, and create pastes with ease.
+
+## Base URL
+
+All API requests should be made to:
+```
+https://api.e-z.host
+```
+
+## Authentication
+
+All API requests must include your API key in the `key` header:
+
+```http
+key: YOUR_API_KEY
+```
+
+You can obtain your API key from your [E-Z Account Settings](https://e-z.gg/dash/account).
+
+## Available Services
+
+The E-Z.host API provides access to three main services:
+
+- **File Upload** - Upload and host files with automatic Cloudflare CDN distribution
+- **URL Shortener** - Create short, shareable links from long URLs
+- **Paste Service** - Create text pastes with syntax highlighting support
+
+For detailed endpoint documentation, please refer to the specific service documentation pages.
+
+## Rate Limiting
+
+All endpoints enforce a rate limit of **3 requests per 15 seconds per API key**. If you exceed this limit, you will receive a `429 Too Many Requests` error. Rate limit information is also provided in the response headers:
+
+```
+Ratelimit-Limit: 3
+Ratelimit-Remaining: 2
+Ratelimit-Reset: 13
+```
+
+## Error Handling
+
+All API responses include a `success` field indicating whether the request was successful. If `success` is `false`, the response will include an error message:
+
+```json
+{
+  "success": false,
+  "error": "not enough rizz"
+}
+```
+
+Common error codes:
+- `400` - Bad Request (invalid parameters)
+- `401` - Unauthorized (invalid or missing API key)
+- `413` - Payload Too Large (file size exceeds limit)
+- `429` - Too Many Requests (rate limit exceeded)
+- `500` - Internal Server Error
+
+## SDKs
+
+We provide official SDK libraries for popular programming languages:
+
+- [JavaScript/Node.js SDK](https://www.npmjs.com/package/e-zhost-js)
+- [Python SDK](https://github.com/e-z-services/e-z-py)
+- [Dotnet SDK](https://github.com/e-z-services/e-z-dotnet)
+
+## Need Help?
+
+If you need assistance with our API, feel free to:
+
+- Ask our [Discord](https://discord.gg/ez) community and staff
+- Email us at [support@e-z.gg](mailto:support@e-z.gg)
