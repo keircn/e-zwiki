@@ -35,7 +35,7 @@ export default function HomePage() {
           </div>
           <GithubInfo
             owner="keircn"
-            repo="e-zdocs-new"
+            repo="e-zwiki"
             className="text-fd-muted-foreground text-sm md:text-base rounded-lg px-4 py-2 inline-flex items-center gap-2"
           />
 
