@@ -1,6 +1,6 @@
-import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
-import ez_svg from '@/assets/e-z.svg';
-import Image from 'next/image';
+import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared";
+import ez_svg from "@/assets/e-z.svg";
+import Image from "next/image";
 
 /**
  * Shared layout configurations
@@ -21,7 +21,7 @@ export const baseOptions: BaseLayoutProps = {
         E-Z Wiki
       </>
     ),
-    transparentMode: 'always',
+    transparentMode: "always",
   },
   themeSwitch: {
     enabled: false,

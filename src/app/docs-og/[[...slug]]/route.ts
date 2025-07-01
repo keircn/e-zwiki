@@ -1,6 +1,6 @@
-import { generateOGImage } from 'fumadocs-ui/og';
-import { source } from '@/lib/source';
-import { notFound } from 'next/navigation';
+import { generateOGImage } from "fumadocs-ui/og";
+import { source } from "@/lib/source";
+import { notFound } from "next/navigation";
 
 export async function GET(
   _req: Request,
@@ -13,15 +13,15 @@ export async function GET(
   return generateOGImage({
     title: page.data.title,
     description: page.data.description,
-    site: 'E-Z Wiki',
-    primaryColor: '#2B6BE8',
-    primaryTextColor: '#E1EFFE',
+    site: "E-Z Wiki",
+    primaryColor: "#2B6BE8",
+    primaryTextColor: "#E1EFFE",
   });
 }
 
 export function generateStaticParams() {
   return source.generateParams().map((page) => ({
     ...page,
-    slug: [...page.slug, 'image.png'],
+    slug: [...page.slug, "image.png"],
   }));
 }

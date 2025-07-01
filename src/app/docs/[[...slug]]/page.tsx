@@ -1,14 +1,14 @@
-import { source } from '@/lib/source';
+import { source } from "@/lib/source";
 import {
   DocsPage,
   DocsBody,
   DocsDescription,
   DocsTitle,
-} from 'fumadocs-ui/page';
-import { notFound } from 'next/navigation';
-import { createRelativeLink } from 'fumadocs-ui/mdx';
-import { getMDXComponents } from '@/mdx-components';
-import ez_svg from '@/assets/e-z.svg';
+} from "fumadocs-ui/page";
+import { notFound } from "next/navigation";
+import { createRelativeLink } from "fumadocs-ui/mdx";
+import { getMDXComponents } from "@/mdx-components";
+import ez_svg from "@/assets/e-z.svg";
 
 export default async function Page(props: {
   params: Promise<{ slug?: string[] }>;
@@ -48,9 +48,9 @@ export async function generateMetadata({
   const page = source.getPage(slug);
   if (!page) notFound();
 
-  const image = ['/docs-og', ...slug, 'image.png'].join('/');
+  const image = ["/docs-og", ...slug, "image.png"].join("/");
   return {
-  metadataBase: new URL('https://e-z.wiki'),
+    metadataBase: new URL("https://e-z.wiki"),
     icons: {
       icon: ez_svg.src,
     },
@@ -60,13 +60,13 @@ export async function generateMetadata({
       images: image,
       title: page.data.title,
       description: page.data.description,
-      url: new URL(`/docs/${slug.join('/')}`, 'https://e-z.wiki').href,
-      siteName: 'E-Z Wiki',
-      locale: 'en_US',
-      type: 'article',
+      url: new URL(`/docs/${slug.join("/")}`, "https://e-z.wiki").href,
+      siteName: "E-Z Wiki",
+      locale: "en_US",
+      type: "article",
     },
     twitter: {
-      card: 'summary_large_image',
+      card: "summary_large_image",
       images: image,
     },
   };
