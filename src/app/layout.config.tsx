@@ -27,5 +27,21 @@ export const baseOptions: BaseLayoutProps = {
     enabled: false,
   },
   // see https://fumadocs.dev/docs/ui/navigation/links
-  links: [],
+  links: [
+    {
+      text: "Documentation",
+      url: "/docs",
+      active: "nested-url",
+    },
+    {
+      text: "API Reference",
+      url: "/docs/api",
+      active: "nested-url",
+    },
+    {
+      text: "Bio Docs",
+      url: "/docs/bio",
+      active: "nested-url",
+    },
+  ],
 };
