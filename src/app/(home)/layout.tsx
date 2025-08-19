@@ -8,6 +8,14 @@ export default function Layout({ children }: { children: ReactNode }) {
       text: "Overview",
       url: "/docs",
     },
+    {
+      text: "API Reference",
+      url: "/docs/api",
+    },
+    {
+      text: "Bio Reference",
+      url: "/docs/bio",
+    },
   ];
 
   return (
