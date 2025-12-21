@@ -2,6 +2,18 @@
 @import "fumadocs-ui/css/neutral.css";
 @import "fumadocs-ui/css/preset.css";
 
+@font-face {
+  font-family: "Yoruka";
+  src: url("/fonts/yoruka.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-yoruka {
+  font-family: "Yoruka", sans-serif;
+}
+
 @keyframes float {
   0%,
   100% {
