@@ -90,8 +90,9 @@ export default function HomePage() {
             className="text-sm sm:text-base text-neutral-400 leading-relaxed max-w-md"
             variants={itemVariants}
           >
-            The <span className="tracking-tight italic pr-0.5">somewhat</span> official documentation for E-Z Services. Learn how to use our
-            APIs, customize your bio page, and get the most out of the platform.
+            The <span className="tracking-tight italic pr-0.5">somewhat</span>{" "}
+            official documentation for E-Z Services. Learn how to use our APIs,
+            customize your bio page, and get the most out of the platform.
           </motion.p>
 
           <motion.div
