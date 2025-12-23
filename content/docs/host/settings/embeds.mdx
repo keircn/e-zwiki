@@ -1,0 +1,64 @@
+---
+title: Embed Settings
+description: Customize how your uploads appear when shared on Discord and other platforms
+---
+
+The Embed Editor lets you customize how your uploaded files appear when shared on platforms that support Open Graph embeds (like Discord, Twitter, and Slack).
+
+## Embed Fields
+
+| Field            | Description                                                 |
+| ---------------- | ----------------------------------------------------------- |
+| **Sitename**     | The name displayed as the website source                    |
+| **Sitename URL** | The URL users are directed to when clicking the sitename    |
+| **Author**       | The author name displayed in the embed                      |
+| **Author URL**   | The URL users are directed to when clicking the author name |
+| **Title**        | The main title of the embed                                 |
+| **Description**  | The description text shown below the title                  |
+
+## Embed Color
+
+Set a custom color for your embed's accent bar. This color appears as the left border on Discord embeds.
+
+## Toggle Options
+
+| Option           | Description                                                                    |
+| ---------------- | ------------------------------------------------------------------------------ |
+| **Embeds**       | Enable or disable custom embeds entirely                                       |
+| **Timestamp**    | Show the upload timestamp in the embed                                         |
+| **Random Color** | Use a randomly generated color for each upload instead of your set embed color |
+
+## Placeholders
+
+You can use dynamic placeholders in your embed Title and Description fields. These will be automatically replaced with the relevant information when the file is shared.
+
+| Placeholder        | Description                         |
+| ------------------ | ----------------------------------- |
+| `{size}`           | The file size of the upload         |
+| `{username}`       | Your E-Z username                   |
+| `{filename}`       | The name of the uploaded file       |
+| `{uploads}`        | Your total upload count             |
+| `{domain}`         | The domain the file is hosted on    |
+| `{date}`           | The upload date                     |
+| `{time}`           | The upload time                     |
+| `{timestamp}`      | The full timestamp of the upload    |
+| `{fakeurl}`        | A fake URL for display purposes     |
+| `{customfilepath}` | Your custom file path if configured |
+| `{storage}`        | Your current storage usage          |
+
+**Example Usage:**
+
+Setting your Title to `{filename} ({size})` would display something like:
+
+> file.png (9.16 MB)
+
+Setting your Description to `{uploads} days since grass has been touched` would display something like:
+
+> 5525 days since grass has been touched
+
+## Managing Embeds
+
+- **Save Embed** - Save your current embed configuration
+- **Add Embed** - Create additional embed presets
+
+You can create multiple embed presets and switch between them. The embed selector at the bottom shows which embed you're currently editing (e.g., "Showing #1 of 1 embeds").
