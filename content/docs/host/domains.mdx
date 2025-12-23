@@ -1,0 +1,81 @@
+---
+title: Domains
+description: Understanding domains, donating your own, and managing domain expiration
+---
+
+E-Z.host offers a wide variety of domains for your uploads. You can use any of the public domains available, or donate your own custom domain.
+
+## Domains List
+
+The Domains List shows all available domains you can use for your uploads. Each domain displays:
+
+| Column    | Description                                 |
+| --------- | ------------------------------------------- |
+| **Name**  | The domain name (e.g., `bruh.bar`)          |
+| **Users** | Number of users currently using this domain |
+| **Tags**  | Domain classification tags (see below)      |
+
+### Domain Tags
+
+| Tag          | Description                              |
+| ------------ | ---------------------------------------- |
+| **Public**   | Available for all users to use           |
+| **Official** | Owned and maintained by E-Z              |
+| **Donated**  | Donated by a community member            |
+| **Wildcard** | Supports subdomains (e.g., `i.bruh.bar`) |
+
+## Donating a Domain
+
+You can donate your own domain to E-Z.host for personal or public use.
+
+### Requirements
+
+- You must own the domain you're donating
+- The domain must not already be in E-Z's domain list
+
+### How to Donate
+
+1. Enter your domain in the **Add Domain** field
+2. Select your options:
+   - **Private** - Only you can use this domain
+   - **Subdomains** - Enable wildcard subdomain support
+3. Click **Submit** to begin the donation process
+4. After submission, you'll receive Cloudflare nameservers to configure
+
+### Configuring Nameservers
+
+E-Z uses the Cloudflare API to manage donated domains. After submitting your domain:
+
+1. You'll be provided with E-Z's Cloudflare nameservers
+2. Log in to your domain registrar (where you purchased the domain)
+3. Find the nameserver settings for your domain
+4. Replace your current nameservers with the ones provided by E-Z
+5. Save your changes and wait for propagation (can take up to 48 hours)
+
+<Callout type="warn">
+  Your domain will not work until you update your nameservers to the ones
+  provided by E-Z.
+</Callout>
+
+## Domain Expiration
+
+Domains are removed manually from E-Z after they expire. It's your responsibility to keep your donated domain renewed.
+
+### Checking Domain Expiration
+
+To check if your domain is expired or about to expire:
+
+1. Use a WHOIS lookup service like [who.is](https://who.is) or [whois.domaintools.com](https://whois.domaintools.com)
+2. Search for your domain name
+3. Look for the **Expiration Date** or **Registry Expiry Date** field
+
+<Callout type="info">
+  Set a reminder to renew your domain before it expires. Expired domains will
+  stop working and may be removed from E-Z.
+</Callout>
+
+### What Happens When a Domain Expires
+
+- Uploads using that domain will no longer be accessible via that URL
+- The domain will be manually removed from E-Z's domain list
+- Your uploads are not deleted - they can still be accessed via other domains you've configured
